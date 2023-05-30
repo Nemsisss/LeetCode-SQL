@@ -1,0 +1,5 @@
+# Write your MySQL query statement below
+
+SELECT ROUND(SUM( IF(t1.Min_o = t1.Min_p,1,0))/ COUNT(*)*100,2) AS immediate_percentage
+FROM (SELECT customer_id, MIN(order_date) AS Min_o , MIN(customer_pref_delivery_date) AS Min_p FROM Delivery
+GROUP BY customer_id) AS t1;
