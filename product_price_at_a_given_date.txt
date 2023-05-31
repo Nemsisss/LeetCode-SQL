@@ -7,9 +7,7 @@ WHERE (product_id, change_date) IN
 FROM Products 
 WHERE DATEDIFF('2019-08-16', change_date ) >=0
 GROUP BY product_id)
-
 UNION
-
 SELECT DISTINCT product_id, 10 AS price
 FROM Products 
 GROUP BY Product_id 
